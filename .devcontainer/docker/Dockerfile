@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:focal
 
 # set timezone
 ENV TIMEZONE=Europe/Berlin
@@ -72,7 +72,7 @@ ENV ASDF_DIR=/home/vscode/.asdf
 ENV PATH=/home/vscode/.asdf/shims:/home/vscode/.asdf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 RUN asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-RUN asdf install nodejs 14.16.0
+RUN asdf install nodejs 14.20.0
 RUN asdf global nodejs $(asdf list nodejs)
 RUN npm install -g npm@7.11.1 yarn
 
