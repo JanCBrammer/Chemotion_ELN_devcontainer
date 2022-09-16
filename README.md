@@ -1,3 +1,5 @@
+**A Visual Studio Code devcontainer for the Chemotion ELN[^1]**
+
 Copying the `.devcontainer/` directory into the root of your local Chemotion ELN repository enables you to run and edit the ELN inside a Visual Studio Code development-container.
 
 Prerequisites:
@@ -10,3 +12,4 @@ Prerequisites:
 
 Note that this is an interim solution until the "official" development-container is available.
 
+[^1]:https://github.com/ComPlat/chemotion_ELN
