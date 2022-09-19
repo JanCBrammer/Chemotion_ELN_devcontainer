@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // This configuration requires..
+            // the solargraph, debase, and ruby-debug-ide gems to be installed, and
+            // the castwide.solargraph, and rebornix.ruby extensions to be installed.
+            "name": "Debug Rails server", // configuration requires solargraph gem and extension to be installed
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "useBundler": true,
+            "pathToBundler": "/home/vscode/.asdf/shims/bundle", // path obtained with which bundle
+            "pathToRDebugIDE": "/home/vscode/.asdf/installs/ruby/2.6.9/lib/ruby/gems/2.6.0/gems/ruby-debug-ide-0.7.3", // path obtained with bundle show ruby-debug-ide
+            "program": "${workspaceRoot}/bin/rails",
+            "args": [
+                "server",
+                "-p",
+                "3000"
+            ]
+        },
+    ]
+  }
+  
