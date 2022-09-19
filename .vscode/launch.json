@@ -10,8 +10,8 @@
             "request": "launch",
             "cwd": "${workspaceRoot}",
             "useBundler": true,
-            "pathToBundler": "/home/vscode/.asdf/shims/bundle", // path obtained with which bundle
-            "pathToRDebugIDE": "/home/vscode/.asdf/installs/ruby/2.6.9/lib/ruby/gems/2.6.0/gems/ruby-debug-ide-0.7.3", // path obtained with bundle show ruby-debug-ide
+            "pathToBundler": "/home/vscode/.asdf/shims/bundle", // path obtained with `which bundle`
+            "pathToRDebugIDE": "/home/vscode/.asdf/installs/ruby/2.6.9/lib/ruby/gems/2.6.0/gems/ruby-debug-ide-0.7.3", // path obtained with `bundle show ruby-debug-ide`
             "program": "${workspaceRoot}/bin/rails",
             "args": [
                 "server",
