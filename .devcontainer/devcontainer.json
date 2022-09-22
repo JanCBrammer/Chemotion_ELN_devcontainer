@@ -47,7 +47,8 @@
     "wix.vscode-import-cost",
     "esbenp.prettier-vscode",
     "prisma.prisma",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "redhat.vscode-yaml"
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
