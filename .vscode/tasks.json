@@ -28,7 +28,12 @@
         "label": "RSpec - selected line, active file",
         "type": "shell",
         "command": "RAILS_ENV=test $(which bundle) exec rspec ${file}:${lineNumber}",
-      }
+      },
+      {
+        "label": "RuboCop autocorrect active file",
+        "type": "shell",
+        "command": "$(which bundle) exec rubocop -c .rubocop.yml -a ${file}",
+      },
     ]
   }
   
