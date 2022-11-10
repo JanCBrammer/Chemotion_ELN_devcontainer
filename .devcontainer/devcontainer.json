@@ -2,68 +2,31 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.187.0/containers/docker-existing-dockerfile
 {
   "name": "Chemotion Dockerfile",
-  // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
   "dockerComposeFile": [
-    "./docker/docker-compose.yml"
+      "../docker-compose.dev.yml"
   ],
-  "service": "chemotion",
-  "workspaceFolder": "/workspace/chemotion",
-  // Set *default* container specific settings.json values on container create.
-  "settings": {
-    "sqltools.connections": [
-      {
-        "name": "Container database",
-        "driver": "PostgreSQL",
-        "previewLimit": 50,
-        "server": "db",
-        "port": 5432,
-        "database": "chemotion_dev",
-        "username": "postgres",
-        "password": ""
-      }
-    ],
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": false
-    }
-  },
-  // Add the IDs of extensions you want installed when the container is created.
+  "service": "app",
+  "workspaceFolder": "/home/chemotion-dev/app",
   "extensions": [
-    "castwide.solargraph",
-    "rebornix.ruby",
-    "misogi.ruby-rubocop",
-    "wingrunr21.vscode-ruby",
-    "ms-vscode.vscode-typescript-next",
-    "wscats.eno",
-    "ms-vscode.js-debug-nightly",
-    "dbaeumer.vscode-eslint",
-    "mtxr.sqltools",
-    "mtxr.sqltools-driver-pg",
-    "wix.vscode-import-cost",
-    "esbenp.prettier-vscode",
-    "prisma.prisma",
-    "eamodio.gitlens",
-    "redhat.vscode-yaml"
+      "castwide.solargraph",
+      "rebornix.ruby",
+      "mtxr.sqltools",
+      "mtxr.sqltools-driver-pg",
+      "eamodio.gitlens",
+      "streetsidesoftware.code-spell-checker"
   ],
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
-    3000,
-    4000
+      3000,
+      5432
   ],
-  // Uncomment the next line to run commands after the container is created - for example installing curl.
   "postCreateCommand": [
-    "/bin/bash",
-    ".devcontainer/scripts/postCreate.sh"
+      "/bin/bash",
+      ".devcontainer/scripts/post_create.sh"
   ],
-  // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "vscode",
-  // stop compose when quitting
-  "shutdownAction": "stopCompose",
-  // make sure to override startup command to run forever.
-  "overrideCommand": true
+  "remoteUser": "chemotion-dev", // see https: //aka.ms/vscode-remote/containers/non-root
+  "shutdownAction": "stopCompose", // stop compose when quitting
+  "overrideCommand": true, // override the commands in the compose file
+  "containerEnv": {
+      "RAILS_ENV": "development"
+  }
 }
