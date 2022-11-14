@@ -21,7 +21,7 @@
   ],
   "postCreateCommand": [
       "/bin/bash",
-      ".devcontainer/scripts/post_create.sh"
+      ".devcontainer/post_create.sh"
   ],
   "remoteUser": "chemotion-dev", // see https: //aka.ms/vscode-remote/containers/non-root
   "shutdownAction": "stopCompose", // stop compose when quitting
