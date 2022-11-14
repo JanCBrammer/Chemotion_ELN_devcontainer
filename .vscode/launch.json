@@ -1,40 +1,45 @@
+// https://code.visualstudio.com/docs/editor/variables-reference
+// Debug configurations requires..
+// the solargraph, debase, and ruby-debug-ide gems to be installed, and
+// the castwide.solargraph, and rebornix.ruby extensions to be installed.
 {
-    // https://code.visualstudio.com/docs/editor/variables-reference
-    // Debug configurations requires..
-    // the solargraph, debase, and ruby-debug-ide gems to be installed, and
-    // the castwide.solargraph, and rebornix.ruby extensions to be installed.
-      "version": "0.2.0",
-      "configurations": [
-          {
-            "name": "Debug Rails server",
-            "type": "Ruby",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "useBundler": true,
-            "pathToBundler": "/home/vscode/.asdf/shims/bundle", // path obtained with `which bundle`
-            "pathToRDebugIDE": "/home/vscode/.asdf/installs/ruby/2.6.9/lib/ruby/gems/2.6.0/gems/ruby-debug-ide-0.7.3", // path obtained with `bundle show ruby-debug-ide`
-            "program": "${workspaceRoot}/bin/rails",
-            "args": [
-                "server",
-                "-p",
-                "3000"
-            ],
-            "env": {"RAILS_ENV": "development"}
-          },
-          {
-            "name": "Debug RSpec - selected line, active file",
-            "type": "Ruby",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "useBundler": true,
-            "pathToBundler": "/home/vscode/.asdf/shims/bundle",
-            "pathToRDebugIDE": "/home/vscode/.asdf/installs/ruby/2.6.9/lib/ruby/gems/2.6.0/gems/ruby-debug-ide-0.7.3",
-            "program": "/home/vscode/.asdf/installs/ruby/2.6.9/bin/rspec", // path obtained with `bundle exec which rpsec`
-            "args": [
-              "${file}:${lineNumber}"
-            ],
-            "env": {"RAILS_ENV": "test"}
-          },
-      ]
-    }
-    
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Rails server",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "useBundler": true,
+      "pathToBundler": "/home/chemotion-dev/.asdf/shims/bundle", // path obtained with `which bundle`
+      "pathToRDebugIDE": "/home/chemotion-dev/.asdf/installs/ruby/2.7.6/lib/ruby/gems/2.7.0/gems/ruby-debug-ide-0.7.3", // path obtained with `bundle info --path ruby-debug-ide`
+      "program": "${workspaceRoot}/bin/rails",
+      "args": [
+        "server",
+        "-b",
+        "0.0.0.0",
+        "-p",
+        "3000"
+      ],
+      "env": {
+        "RAILS_ENV": "development"
+      }
+    },
+    {
+      "name": "Debug RSpec - selected line, active file",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "useBundler": true,
+      "pathToBundler": "/home/chemotion-dev/.asdf/shims/bundle",
+      "pathToRDebugIDE": "/home/chemotion-dev/.asdf/installs/ruby/2.7.6/lib/ruby/gems/2.7.0/gems/ruby-debug-ide-0.7.3",
+      "program": "/home/chemotion-dev/.asdf/installs/ruby/2.7.6/bin/rspec", // path obtained with `bundle exec which rspec`
+      "args": [
+        "${file}:${lineNumber}"
+      ],
+      "env": {
+        "RAILS_ENV": "test"
+      }
+    },
+  ]
+}
