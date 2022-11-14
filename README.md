@@ -6,6 +6,7 @@ Prerequisites:
 * Visual Studio Code
   * `Dev Containers` extension (ms-vscode-remote.remote-containers)
 * Docker
+  * install Docker Engine according to https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
   * non-root user can issue Docker commands: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
 * Local clone of https://github.com/ComPlat/chemotion_ELN
   * make sure to remove the `.development` suffix from the `.env.development` file, otherwise the container won't run
