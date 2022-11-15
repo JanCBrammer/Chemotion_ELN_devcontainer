@@ -1,6 +1,9 @@
+// https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes
 // https://code.visualstudio.com/docs/editor/variables-reference
+// https://github.com/microsoft/vscode-recipes/tree/master/debugging-Ruby-on-Rails
+// https://github.com/rubyide/vscode-ruby/blob/main/docs/debugger.md
 // Debug configurations requires..
-// the solargraph, debase, and ruby-debug-ide gems to be installed, and
+// the solargraph, debase, and ruby-debug-ide gems to be (bundle) installed, and
 // the castwide.solargraph, and rebornix.ruby extensions to be installed.
 {
   "version": "0.2.0",
@@ -11,8 +14,8 @@
       "request": "launch",
       "cwd": "${workspaceRoot}",
       "useBundler": true,
-      "pathToBundler": "/home/chemotion-dev/.asdf/shims/bundle", // path obtained with `which bundle`
-      "pathToRDebugIDE": "/home/chemotion-dev/.asdf/installs/ruby/2.7.6/lib/ruby/gems/2.7.0/gems/ruby-debug-ide-0.7.3", // path obtained with `bundle info --path ruby-debug-ide`
+      "pathToBundler": "${env:BUNDLER_PATH}",
+      "pathToRDebugIDE": "${env:RUBY_DEBUG_IDE_PATH}",
       "program": "${workspaceRoot}/bin/rails",
       "args": [
         "server",
@@ -31,15 +34,25 @@
       "request": "launch",
       "cwd": "${workspaceRoot}",
       "useBundler": true,
-      "pathToBundler": "/home/chemotion-dev/.asdf/shims/bundle",
-      "pathToRDebugIDE": "/home/chemotion-dev/.asdf/installs/ruby/2.7.6/lib/ruby/gems/2.7.0/gems/ruby-debug-ide-0.7.3",
-      "program": "/home/chemotion-dev/.asdf/installs/ruby/2.7.6/bin/rspec", // path obtained with `bundle exec which rspec`
+      "pathToBundler": "${env:BUNDLER_PATH}",
+      "pathToRDebugIDE": "${env:RUBY_DEBUG_IDE_PATH}",
+      "program": "/home/chemotion-dev/.asdf/installs/ruby/2.7.6/bin/rspec", // "program" doesn't support env variable substitution
       "args": [
         "${file}:${lineNumber}"
       ],
       "env": {
         "RAILS_ENV": "test"
       }
+    },
+  ],
+  "environment": [
+    {
+      "name": "BUNDLER_PATH",
+      "value": "$(which bundle)",
+    },
+    {
+      "name": "RUBY_DEBUG_IDE_PATH",
+      "value": "$(bundle info --path ruby-debug-ide)"
     },
   ]
 }
