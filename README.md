@@ -1,4 +1,6 @@
-**A Visual Studio Code devcontainer for the Chemotion ELN[^1]**
+> :warning: **This repository is unmaintained and replaced by the official ELN devcontainer** :warning:
+
+**A Visual Studio Code devcontainer for the Chemotion ELN[^2]**
 
 Copying the `.devcontainer/` directory into the root of your local Chemotion ELN repository enables you to run and edit the ELN inside a Visual Studio Code development-container.
 
@@ -18,4 +20,5 @@ How to configure Ruby debugging in `.vscode/launch.json`:
 * https://github.com/Microsoft/vscode-recipes/blob/2174a750102a76142378ea08dbbb4a576dc6d1d5/debugging-Ruby-on-Rails/README.md
 
 
-[^1]:https://github.com/ComPlat/chemotion_ELN
+[^1]:https://github.com/ComPlat/chemotion_ELN/blob/b59ab0d56b926c242d5e4d6bae869da10b2302ea/.devcontainer/devcontainer.json
+[^2]:https://github.com/ComPlat/chemotion_ELN
